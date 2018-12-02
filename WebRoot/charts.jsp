@@ -1,7 +1,8 @@
-<!DOCTYPE HTML>
+<%@page language = "java" contentType = "text/html; charset = UTF-8"
+pageEncoding = "UTF-8" %>
 <html>
 <head>
-<title>Grids</title>
+<title>Charts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Novus Admin Panel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -20,7 +21,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 <script src="js/modernizr.custom.js"></script>
 <!--webfonts-->
 <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
-<!--//webfonts--> 
+<!--//webfonts-->
+<!-- chart -->
+<script src="js/Chart.js"></script>
+<!-- //chart --> 
 <!--animate-->
 <link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
 <script src="js/wow.min.js"></script>
@@ -38,14 +42,14 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 	<div class="main-content">
 		<!--left-fixed -navigation-->
 		<div class=" sidebar" role="navigation">
-          <div class="navbar-collapse">
+            <div class="navbar-collapse">
 				<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
 					<ul class="nav" id="side-menu">
 						<li>
 							<a href="backindex.html" class="active"><i class="fa fa-home nav_icon"></i>管理后台</a>
 						</li>
 						<li>
-							<a href="widgets.html"><i class="fa fa-th-large nav_icon"></i>管理员状态</a>
+							<a href="widgets.html"><i class="fa fa-th-large nav_icon"></i>管理员状态 </a>
 						</li>
 						<!-- <li>
 							<a href="#"><i class="fa fa-envelope nav_icon"></i>Mailbox<span class="fa arrow"></span></a>
@@ -60,7 +64,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 							//nav-second-level
 						</li> -->
 						<li>
-							<a href="tables.html"><i class="fa fa-table nav_icon"></i>图书管理</a>
+							<a href="tables.html"><i class="fa fa-table nav_icon"></i>图书管理 </a>
 						</li>
 						<li>
 							<a href="grids.html"><i class="fa fa-check-square-o nav_icon"></i>图书添加</a>
@@ -202,164 +206,182 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 		<!-- //header-ends -->
 		<!-- main content start-->
 		<div id="page-wrapper">
-			<div class="main-page">
-				<div class="row">
-						<h3 class="title1">图书添加 :</h3>
-						<div class="form-three widget-shadow">
-							<div data-example-id="form-validation-states-with-icons"> <form> <div class="form-group has-success has-feedback"> <label class="control-label" for="inputSuccess2">Input with success</label> <input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status"> <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span> <span id="inputSuccess2Status" class="sr-only">(success)</span> </div> <div class="form-group has-warning has-feedback"> <label class="control-label" for="inputWarning2">Input with warning</label> <input type="text" class="form-control" id="inputWarning2" aria-describedby="inputWarning2Status"> <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span> <span id="inputWarning2Status" class="sr-only">(warning)</span> </div> <div class="form-group has-error has-feedback"> <label class="control-label" for="inputError2">Input with error</label> <input type="text" class="form-control" id="inputError2" aria-describedby="inputError2Status"> <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span> <span id="inputError2Status" class="sr-only">(error)</span> </div> <div class="form-group has-success has-feedback"> <label class="control-label" for="inputGroupSuccess1">Input group with success</label> <div class="input-group"> <span class="input-group-addon">@</span> <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status"> </div> <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span> <span id="inputGroupSuccess1Status" class="sr-only">(success)</span> </div> </form> </div>
+			<div class="main-page charts-page">
+				<h3 class="title1">Modern charts</h3>
+				<div class="charts">
+					<div class="col-md-6 chrt-page-grids">
+						<h4 class="title">Line Chart</h4>
+						<canvas id="line" height="300" width="400" style="width: 400px; height: 300px;"></canvas>
+					</div>
+					<div class="col-md-6 chrt-page-grids chrt-right">
+						<h4 class="title">Doughnut Chart</h4>
+						<div class="doughnut-grid">
+							<canvas id="doughnut" style="width:416px; height: 306px;"></canvas>
 						</div>
-						<div class="form-three widget-shadow">
-							<div class=" panel-body-inputin">
-								<form class="form-horizontal">
-									<div class="form-group">
-										<label class="col-md-2 control-label">Email Address</label>
-										<div class="col-md-8">
-											<div class="input-group">							
-												<span class="input-group-addon">
-													<i class="fa fa-envelope-o"></i>
-												</span>
-												<input type="text" class="form-control1" placeholder="Email Address">
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-md-2 control-label">Password</label>
-										<div class="col-md-8">
-											<div class="input-group">
-												<span class="input-group-addon">
-													<i class="fa fa-key"></i>
-												</span>
-												<input type="password" class="form-control1" id="exampleInputPassword1" placeholder="Password">
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-md-2 control-label">Email Address</label>
-										<div class="col-md-8">
-											<div class="input-group input-icon right">
-												<span class="input-group-addon">
-													<i class="fa fa-envelope-o"></i>
-												</span>
-												<input id="email" class="form-control1" type="text" placeholder="Email Address">
-											</div>
-										</div>
-										<div class="col-sm-2">
-											<p class="help-block">With tooltip</p>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-md-2 control-label">Password</label>
-										<div class="col-md-8">
-											<div class="input-group input-icon right">
-												<span class="input-group-addon">
-													<i class="fa fa-key"></i>
-												</span>
-												<input type="password" class="form-control1" placeholder="Password">
-											</div>
-										</div>
-										<div class="col-sm-2">
-											<p class="help-block">With tooltip</p>
-										</div>
-									</div>
-									<div class="form-group has-success">
-										<label class="col-md-2 control-label">Input Addon Success</label>
-										<div class="col-md-8">
-											<div class="input-group input-icon right">
-												<span class="input-group-addon">
-													<i class="fa fa-envelope-o"></i>
-												</span>
-												<input id="email" class="form-control1" type="text" placeholder="Email Address">
-											</div>
-										</div>
-										<div class="col-sm-2">
-											<p class="help-block">Email is valid!</p>
-										</div>
-									</div>
-									<div class="form-group has-error">
-										<label class="col-md-2 control-label">Input Addon Error</label>
-										<div class="col-md-8">
-											<div class="input-group input-icon right">
-												<span class="input-group-addon">
-													<i class="fa fa-key"></i>
-												</span>
-												<input type="password" class="form-control1" placeholder="Password">
-											</div>
-										</div>
-										<div class="col-sm-2">
-											<p class="help-block">Error!</p>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-md-2 control-label">Checkbox Addon</label>
-										<div class="col-md-8">
-											<div class="input-group">
-												<div class="input-group-addon"><input type="checkbox"></div>
-												<input type="text" class="form-control1">
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-md-2 control-label">Checkbox Addon</label>
-										<div class="col-md-8">
-											<div class="input-group">
-												<input type="text" class="form-control1">
-												<div class="input-group-addon"><input type="checkbox"></div>
-												
-											</div>
-										</div>
-										<div class="col-sm-2">
-											<p class="help-block">Checkbox on right</p>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-md-2 control-label">Radio Addon</label>
-										<div class="col-md-8">
-											<div class="input-group">
-												<div class="input-group-addon"><input type="radio"></div>
-												<input type="text" class="form-control1">
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-md-2 control-label">Radio Addon</label>
-										<div class="col-md-8">
-											<div class="input-group">
-												<input type="text" class="form-control1">
-												<div class="input-group-addon"><input type="radio"></div>
-												
-											</div>
-										</div>
-										<div class="col-sm-2">
-											<p class="help-block">Radio on right</p>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-md-2 control-label">Input Processing</label>
-										<div class="col-md-8">
-											<div class="input-icon right spinner">
-												<i class="fa fa-fw fa-spin fa-spinner"></i>
-												<input id="email" class="form-control1" type="text" placeholder="Processing...">
-											</div>
-										</div>
-										<div class="col-sm-2">
-											<p class="help-block">Processing right</p>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-md-2 control-label">Static Paragraph</label>
-										<div class="col-md-8">
-											<p class="form-control1 m-n">email@example.com</p>
-										</div>
-									</div>
-									<div class="form-group mb-n">
-										<label class="col-md-2 control-label">Readonly</label>
-										<div class="col-md-8">
-											<input type="text" class="form-control1" placeholder="Readonly" readonly="">
-										</div>
-									</div>
-								</form>
-							</div>
+					</div>
+					<div class="col-md-6 charts chrt-page-grids">
+						<h4 class="title">Radar Chart</h4>
+						<div class="radar-grid">
+							<canvas id="radar" height="300" width="400" style="width: 400px; height: 300px;"></canvas>
 						</div>
+					</div>
+					<div class="col-md-6 charts chrt-page-grids chrt-right">
+						<h4 class="title">polar Area Chart</h4>
+						<div class="polar-area">
+							<canvas id="polarArea" height="300" width="400" style="width: 400px; height: 300px;"></canvas>
+						</div>
+					</div>
+					<div class="col-md-6 charts chrt-page-grids">
+						<h4 class="title">Bar Chart</h4>
+						<canvas id="bar" height="300" width="400" style="width: 400px; height: 300px;"></canvas>
+					</div>
+					<div class="col-md-6 charts chrt-page-grids chrt-right">
+						<h4 class="title">Pie Chart</h4>
+						<div class="pie-grid">
+							<canvas id="pie" height="300" width="400" style="width: 400px; height: 300px;"></canvas>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+						<script>
+						var doughnutData = [
+								{
+									value: 30,
+									color:"#4F52BA"
+								},
+								{
+									value : 50,
+									color : "#F2B33F"
+								},
+								{
+									value : 100,
+									color : "#585858"
+								},
+								{
+									value : 40,
+									color : "#e94e02"
+								},
+								{
+									value : 120,
+									color : "#9358ac"
+								}
+							
+							];
+						var lineChartData = {
+							labels : ["Sun","Mon","Tue","Wed","Thr","Fri","Sat"],
+							datasets : [
+								{
+									fillColor : "rgba(51, 51, 51, 0)",
+									strokeColor : "#4F52BA",
+									pointColor : "#4F52BA",
+									pointStrokeColor : "#fff",
+									data : [50,65,68,71,67,70,65]
+								},
+								{
+									fillColor : "rgba(51, 51, 51, 0)",
+									strokeColor : "#F2B33F",
+									pointColor : "#F2B33F",
+									pointStrokeColor : "#fff",
+									data : [55,60,54,58,62,55,58]
+								},
+								{
+									fillColor : "rgba(51, 51, 51, 0)",
+									strokeColor : "#e94e02",
+									pointColor : "#e94e02",
+									pointStrokeColor : "#fff",
+									data : [50,55,52,45,46,49,52]
+								}
+							]
+							
+						};
+						var pieData = [
+								{
+									value: 30,
+									color:"#4F52BA"
+								},
+								{
+									value : 50,
+									color : "#585858"
+								},
+								{
+									value : 100,
+									color : "#e94e02"
+								}
+							
+							];
+						var barChartData = {
+							labels : ["January","February","March","April","May","June","July"],
+							datasets : [
+								{
+									fillColor : "rgba(233, 78, 2, 0.83)",
+									strokeColor : "#ef553a",
+									highlightFill: "#ef553a",
+									data : [65,59,90,81,56,55,40]
+								},
+								{
+									fillColor : "rgba(79, 82, 186, 0.83)",
+									strokeColor : "#4F52BA",
+									highlightFill: "#4F52BA",
+									data : [50,65,60,50,70,70,80]
+								},
+								{
+									fillColor : "rgba(88, 88, 88, 0.83)",
+									strokeColor : "#585858",
+									highlightFill: "#585858",
+									data : [28,48,40,19,96,27,100]
+								}
+							]
+							
+						};
+					var chartData = [
+							{
+								value : Math.random(),
+								color: "rgba(239, 85, 58, 0.87)"
+							},
+							{
+								value : Math.random(),
+								color: "rgba(242, 179, 63, 0.87)"
+							},
+							{
+								value : Math.random(),
+								color: "rgba(88, 88, 88, 0.87)"
+							},
+							{
+								value : Math.random(),
+								color: "rgba(147, 88, 172, 0.87)"
+							},
+							{
+								value : Math.random(),
+								color: "rgba(79, 82, 186, 0.87)"
+							},
+						];
+						var radarChartData = {
+							labels : ["Sun","Mon","Tue","Wed","Thr","Fri","Sat"],
+							datasets : [
+								{
+									fillColor : "rgba(239, 85, 58, 0.87)",
+									strokeColor : "#e94e02",
+									pointColor : "#e94e02",
+									pointStrokeColor : "#fff",
+									data : [65,59,90,81,56,55,40]
+								},
+								{
+									fillColor : "rgba(79, 82, 186, 0.87)",
+									strokeColor : "#4F52BA",
+									pointColor : "#4F52BA",
+									pointStrokeColor : "#fff",
+									data : [28,48,40,19,96,27,100]
+								}
+							]
+							
+						};
+						new Chart(document.getElementById("doughnut").getContext("2d")).Doughnut(doughnutData);
+						new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData);
+						new Chart(document.getElementById("radar").getContext("2d")).Radar(radarChartData);
+						new Chart(document.getElementById("polarArea").getContext("2d")).PolarArea(chartData);
+						new Chart(document.getElementById("bar").getContext("2d")).Bar(barChartData);
+						new Chart(document.getElementById("pie").getContext("2d")).Pie(pieData);
+					</script>	
+				</div>
 			</div>
 		</div>
 	</div>

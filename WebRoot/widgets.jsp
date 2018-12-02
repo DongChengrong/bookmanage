@@ -1,7 +1,8 @@
-<!DOCTYPE HTML>
+<%@page language = "java" contentType = "text/html; charset = UTF-8"
+pageEncoding = "UTF-8" %>
 <html>
 <head>
-<title>Charts</title>
+<title>管理员状态</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Novus Admin Panel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -20,10 +21,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 <script src="js/modernizr.custom.js"></script>
 <!--webfonts-->
 <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
-<!--//webfonts-->
-<!-- chart -->
-<script src="js/Chart.js"></script>
-<!-- //chart --> 
+<!--//webfonts--> 
 <!--animate-->
 <link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
 <script src="js/wow.min.js"></script>
@@ -31,6 +29,12 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 		 new WOW().init();
 	</script>
 <!--//end-animate-->
+<!--skycons-icons-->
+<script src="js/skycons.js"></script>
+<!--//skycons-icons-->
+<!--circlechart-->
+<script src="js/jquery.circlechart.js"></script>
+<!--circlechart-->
 <!-- Metis Menu -->
 <script src="js/metisMenu.min.js"></script>
 <script src="js/custom.js"></script>
@@ -45,23 +49,11 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
 					<ul class="nav" id="side-menu">
 						<li>
-							<a href="backindex.html" class="active"><i class="fa fa-home nav_icon"></i>管理后台</a>
+							<a href="backindex.html"><i class="fa fa-home nav_icon"></i>管理后台</a>
 						</li>
 						<li>
-							<a href="widgets.html"><i class="fa fa-th-large nav_icon"></i>管理员状态 </a>
+							<a href="widgets.html" class="active"><i class="fa fa-th-large nav_icon"></i>管理员状态 </a>
 						</li>
-						<!-- <li>
-							<a href="#"><i class="fa fa-envelope nav_icon"></i>Mailbox<span class="fa arrow"></span></a>
-							<ul class="nav nav-second-level collapse">
-								<li>
-									<a href="inbox.html">Inbox <span class="nav-badge-btm">05</span></a>
-								</li>
-								<li>
-									<a href="compose.html">Compose email</a>
-								</li>
-							</ul>
-							//nav-second-level
-						</li> -->
 						<li>
 							<a href="tables.html"><i class="fa fa-table nav_icon"></i>图书管理 </a>
 						</li>
@@ -85,6 +77,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 							<a href="charts.html" class="chart-nav"><i class="fa fa-bar-chart nav_icon"></i>Charts </a>
 						</li>
 					</ul>
+					<div class="clearfix"> </div>
 					<!-- //sidebar-collapse -->
 				</nav>
 			</div>
@@ -99,7 +92,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				<!--logo -->
 				<div class="logo">
 					<a href="backindex.html">
-						<h1>管理后台</h1>
+						<h1>用户名</h1>
 						<span>管理员</span>
 					</a>
 				</div>
@@ -117,7 +110,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				</div><!--//end-search-box-->
 				<div class="clearfix"> </div>
 			</div>
-			<div class="header-right">
+		<div class="header-right">
 				<div class="profile_details_left"><!--notifications of menu start -->
 					<ul class="nofitications-dropdown">
 						<li class="dropdown head-dpdn">
@@ -198,190 +191,180 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 						</li>
 					</ul>
 				</div>
-				<div class="clearfix"> </div>	
+				<div class="clearfix"> </div>				
 			</div>
-			<div class="clearfix"> </div>	
 		</div>
 		<!-- //header-ends -->
 		<!-- main content start-->
 		<div id="page-wrapper">
-			<div class="main-page charts-page">
-				<h3 class="title1">Modern charts</h3>
-				<div class="charts">
-					<div class="col-md-6 chrt-page-grids">
-						<h4 class="title">Line Chart</h4>
-						<canvas id="line" height="300" width="400" style="width: 400px; height: 300px;"></canvas>
-					</div>
-					<div class="col-md-6 chrt-page-grids chrt-right">
-						<h4 class="title">Doughnut Chart</h4>
-						<div class="doughnut-grid">
-							<canvas id="doughnut" style="width:416px; height: 306px;"></canvas>
+			<div class="main-page">
+				<div class="elements">
+					<div class="col-md-6 weather-grids widget-shadow">
+						<div class="header-top">
+							<figure class="icons">
+								<canvas id="clear-day" width="64" height="64"></canvas>
+							</figure>
+							<h2>天气</h2>
+							<ul>
+								<li><p>°C</p></li>
+								<li><p class="cen">°F</p></li>
+							</ul>
+							<div class="clearfix"> </div>
 						</div>
-					</div>
-					<div class="col-md-6 charts chrt-page-grids">
-						<h4 class="title">Radar Chart</h4>
-						<div class="radar-grid">
-							<canvas id="radar" height="300" width="400" style="width: 400px; height: 300px;"></canvas>
+						<div class="header-bottom">
+							<div class="header-bottom1">
+								<div class="header-head">
+									<h4>Sunny</h4>
+									<figure class="icons">
+										<canvas id="partly-cloudy-day" width="64" height="64"></canvas>
+									</figure>	
+									<h6>20°</h6>
+									<div class="bottom-head">
+										<p>Monday</p>
+									</div>
+								</div>
+							</div>
+							<div class="header-bottom1 header-bottom2">
+								<div class="header-head">
+									<h4>Cloudy</h4>
+									<figure class="icons">
+										<canvas id="cloudy" width="64" height="64"></canvas>
+									</figure>
+									<h6>37°</h6>
+									<div class="bottom-head">
+										<p>Tuesday</p>
+									</div>
+								</div>
+							</div>
+							<div class="header-bottom1">
+								<div class="header-head">
+									<h4>Rainy</h4>
+									<figure class="icons">
+										<canvas id="rain" width="64" height="64"></canvas>
+									</figure>
+									<h6>18°</h6>
+									<div class="bottom-head">
+										<p>Wednesday</p>
+									</div>
+								</div>
+							</div>
+							<div class="header-bottom1 header-bottom2">
+								<div class="header-head">
+									<h4>Snowy</h4>
+									<figure class="icons">
+										<canvas id="snow" width="64" height="64"></canvas>
+									</figure>
+									<h6>-2°</h6>
+									<div class="bottom-head">
+										<p>Thursday</p>
+									</div>
+								</div>
+							</div>
+							<div class="clearfix"> </div>
 						</div>
+						<script>
+							 var icons = new Skycons({"color": "#fff"}),
+								  list  = [
+									"clear-day"
+								  ],
+								  i;
+
+							  for(i = list.length; i--; )
+								icons.set(list[i], list[i]);
+
+							  icons.play();
+						</script>
+						<script>
+							 var icons = new Skycons({"color": "#E94E02"}),
+								  list  = [
+									"clear-night", "partly-cloudy-day",
+									"partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+									"fog"
+								  ],
+								  i;
+
+							  for(i = list.length; i--; )
+								icons.set(list[i], list[i]);
+
+							  icons.play();
+						</script>
 					</div>
-					<div class="col-md-6 charts chrt-page-grids chrt-right">
-						<h4 class="title">polar Area Chart</h4>
-						<div class="polar-area">
-							<canvas id="polarArea" height="300" width="400" style="width: 400px; height: 300px;"></canvas>
+					<div class="col-md-6 weather-grids weather-right widget-shadow">
+						<div class="header-top">
+							<h3>管理员状态 </h3>
 						</div>
-					</div>
-					<div class="col-md-6 charts chrt-page-grids">
-						<h4 class="title">Bar Chart</h4>
-						<canvas id="bar" height="300" width="400" style="width: 400px; height: 300px;"></canvas>
-					</div>
-					<div class="col-md-6 charts chrt-page-grids chrt-right">
-						<h4 class="title">Pie Chart</h4>
-						<div class="pie-grid">
-							<canvas id="pie" height="300" width="400" style="width: 400px; height: 300px;"></canvas>
+						<div class="circle-charts">
+							<ul>
+								<li><div class="demo-1" data-percent="65"></div><p>活跃</p></li>
+								<li><div class="demo-2" data-percent="55"></div><p>未知</p> </li>
+								<li><div class="demo-3" data-percent="85"></div><p>休息</p> </li>
+							</ul>
 						</div>
+						<script>
+							$('.demo-1').percentcircle();
+								$('.demo-2').percentcircle({
+								animate : true,
+								diameter : 100,
+								guage: 3,
+								coverBg: '#fff',
+								bgColor: '#efefef',
+								fillColor: '#e94e02',
+								percentSize: '15px',
+								percentWeight: 'normal'
+								});
+
+								$('.demo-3').percentcircle({
+								animate : true,
+								diameter : 100,
+								guage: 3,
+								coverBg: '#fff',
+								bgColor: '#efefef',
+								fillColor: '#F2B33F',
+								percentSize: '15px',
+								percentWeight: 'normal'
+							});
+						</script>
 					</div>
 					<div class="clearfix"> </div>
-						<script>
-						var doughnutData = [
-								{
-									value: 30,
-									color:"#4F52BA"
-								},
-								{
-									value : 50,
-									color : "#F2B33F"
-								},
-								{
-									value : 100,
-									color : "#585858"
-								},
-								{
-									value : 40,
-									color : "#e94e02"
-								},
-								{
-									value : 120,
-									color : "#9358ac"
-								}
-							
-							];
-						var lineChartData = {
-							labels : ["Sun","Mon","Tue","Wed","Thr","Fri","Sat"],
-							datasets : [
-								{
-									fillColor : "rgba(51, 51, 51, 0)",
-									strokeColor : "#4F52BA",
-									pointColor : "#4F52BA",
-									pointStrokeColor : "#fff",
-									data : [50,65,68,71,67,70,65]
-								},
-								{
-									fillColor : "rgba(51, 51, 51, 0)",
-									strokeColor : "#F2B33F",
-									pointColor : "#F2B33F",
-									pointStrokeColor : "#fff",
-									data : [55,60,54,58,62,55,58]
-								},
-								{
-									fillColor : "rgba(51, 51, 51, 0)",
-									strokeColor : "#e94e02",
-									pointColor : "#e94e02",
-									pointStrokeColor : "#fff",
-									data : [50,55,52,45,46,49,52]
-								}
-							]
-							
-						};
-						var pieData = [
-								{
-									value: 30,
-									color:"#4F52BA"
-								},
-								{
-									value : 50,
-									color : "#585858"
-								},
-								{
-									value : 100,
-									color : "#e94e02"
-								}
-							
-							];
-						var barChartData = {
-							labels : ["January","February","March","April","May","June","July"],
-							datasets : [
-								{
-									fillColor : "rgba(233, 78, 2, 0.83)",
-									strokeColor : "#ef553a",
-									highlightFill: "#ef553a",
-									data : [65,59,90,81,56,55,40]
-								},
-								{
-									fillColor : "rgba(79, 82, 186, 0.83)",
-									strokeColor : "#4F52BA",
-									highlightFill: "#4F52BA",
-									data : [50,65,60,50,70,70,80]
-								},
-								{
-									fillColor : "rgba(88, 88, 88, 0.83)",
-									strokeColor : "#585858",
-									highlightFill: "#585858",
-									data : [28,48,40,19,96,27,100]
-								}
-							]
-							
-						};
-					var chartData = [
-							{
-								value : Math.random(),
-								color: "rgba(239, 85, 58, 0.87)"
-							},
-							{
-								value : Math.random(),
-								color: "rgba(242, 179, 63, 0.87)"
-							},
-							{
-								value : Math.random(),
-								color: "rgba(88, 88, 88, 0.87)"
-							},
-							{
-								value : Math.random(),
-								color: "rgba(147, 88, 172, 0.87)"
-							},
-							{
-								value : Math.random(),
-								color: "rgba(79, 82, 186, 0.87)"
-							},
-						];
-						var radarChartData = {
-							labels : ["Sun","Mon","Tue","Wed","Thr","Fri","Sat"],
-							datasets : [
-								{
-									fillColor : "rgba(239, 85, 58, 0.87)",
-									strokeColor : "#e94e02",
-									pointColor : "#e94e02",
-									pointStrokeColor : "#fff",
-									data : [65,59,90,81,56,55,40]
-								},
-								{
-									fillColor : "rgba(79, 82, 186, 0.87)",
-									strokeColor : "#4F52BA",
-									pointColor : "#4F52BA",
-									pointStrokeColor : "#fff",
-									data : [28,48,40,19,96,27,100]
-								}
-							]
-							
-						};
-						new Chart(document.getElementById("doughnut").getContext("2d")).Doughnut(doughnutData);
-						new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData);
-						new Chart(document.getElementById("radar").getContext("2d")).Radar(radarChartData);
-						new Chart(document.getElementById("polarArea").getContext("2d")).PolarArea(chartData);
-						new Chart(document.getElementById("bar").getContext("2d")).Bar(barChartData);
-						new Chart(document.getElementById("pie").getContext("2d")).Pie(pieData);
-					</script>	
 				</div>
-			</div>
+				</div>
+				<div class="clearfix"> </div>	
+				<div class="tables">
+				<h3 class="title1">管理员</h3>
+					<div class="panel-body widget-shadow">
+						<h4>管理员:</h4>
+						<table class="table">
+							<thead>
+								<tr>
+								  <th>#</th>
+								  <th>用户名：</th>
+								  <th>姓名：</th>
+								  <th>权限：</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+								  <th scope="row">1</th>
+								  <td>Mark</td>
+								  <td>Otto</td>
+								  <td>@mdo</td>
+								</tr>
+								<tr>
+								  <th scope="row">2</th>
+								  <td>Jacob</td>
+								  <td>Thornton</td>
+								  <td>@fat</td>
+								</tr>
+								<tr>
+								  <th scope="row">3</th>
+								  <td>Larry</td>
+								  <td>the Bird</td>
+								  <td>@twitter</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
 		</div>
 	</div>
 	<!-- Classie -->
