@@ -1,6 +1,20 @@
 <%@page language = "java" contentType = "text/html; charset = UTF-8"
 pageEncoding = "UTF-8" %>
+<%@ page import="entry.User" %>
 <title>管理后台</title>
+
+<head>
+	<!--  先判断是否登录，未登录则提示去登录  -->
+	<script type="text/javascript">
+		
+	<%User user = (User) session.getAttribute("user");
+			if (user == null) {%>
+		alert("检测到您还未登录，清先登录！");
+		window.location.href = "login.jsp";
+	<%}%>
+		
+	</script>
+
 				<meta name="viewport" content="width=device-width, initial-scale=1">
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 				<meta name="keywords" content="Novus Admin Panel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
