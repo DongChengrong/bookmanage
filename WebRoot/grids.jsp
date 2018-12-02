@@ -43,44 +43,44 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
 					<ul class="nav" id="side-menu">
 						<li>
-							<a href="backindex.html" class="active"><i class="fa fa-home nav_icon"></i>管理后台</a>
+							<a href="backindex.jsp" class="active"><i class="fa fa-home nav_icon"></i>管理后台</a>
 						</li>
 						<li>
-							<a href="widgets.html"><i class="fa fa-th-large nav_icon"></i>管理员状态</a>
+							<a href="widgets.jsp"><i class="fa fa-th-large nav_icon"></i>管理员状态</a>
 						</li>
 						<!-- <li>
 							<a href="#"><i class="fa fa-envelope nav_icon"></i>Mailbox<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level collapse">
 								<li>
-									<a href="inbox.html">Inbox <span class="nav-badge-btm">05</span></a>
+									<a href="inbox.jsp">Inbox <span class="nav-badge-btm">05</span></a>
 								</li>
 								<li>
-									<a href="compose.html">Compose email</a>
+									<a href="compose.jsp">Compose email</a>
 								</li>
 							</ul>
 							//nav-second-level
 						</li> -->
 						<li>
-							<a href="tables.html"><i class="fa fa-table nav_icon"></i>图书管理</a>
+							<a href="tables.jsp"><i class="fa fa-table nav_icon"></i>图书管理</a>
 						</li>
 						<li>
-							<a href="grids.html"><i class="fa fa-check-square-o nav_icon"></i>图书添加</a>
+							<a href="grids.jsp"><i class="fa fa-check-square-o nav_icon"></i>图书添加</a>
 							<!-- //nav-second-level -->
 						</li>
 						<li>
 							<a href="#"><i class="fa fa-file-text-o nav_icon"></i>Pages<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level collapse">
 								<li>
-									<a href="login.html">Login</a>
+									<a href="login.jsp">Login</a>
 								</li>
 								<li>
-									<a href="signup.html">SignUp</a>
+									<a href="signup.jsp">SignUp</a>
 								</li>
 							</ul>
 							<!-- //nav-second-level -->
 						</li>
 						<li>
-							<a href="charts.html" class="chart-nav"><i class="fa fa-bar-chart nav_icon"></i>Charts </a>
+							<a href="charts.jsp" class="chart-nav"><i class="fa fa-bar-chart nav_icon"></i>Charts </a>
 						</li>
 					</ul>
 					<!-- //sidebar-collapse -->
@@ -96,7 +96,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				<!--toggle button end-->
 				<!--logo -->
 				<div class="logo">
-					<a href="backindex.html">
+					<a href="backindex.jsp">
 						<h1>管理后台</h1>
 						<span>管理员</span>
 					</a>
@@ -191,7 +191,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 							<ul class="dropdown-menu drp-mnu">
 								<li> <a href="#"><i class="fa fa-cog"></i> 设置</a> </li> 
 								<li> <a href="#"><i class="fa fa-user"></i> 。。。</a> </li> 
-								<li> <a href="login.html"><i class="fa fa-sign-out"></i> 登出</a> </li>
+								<li> <a href="login.jsp"><i class="fa fa-sign-out"></i> 登出</a> </li>
 							</ul>
 						</li>
 					</ul>

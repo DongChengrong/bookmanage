@@ -42,7 +42,7 @@ pageEncoding = "UTF-8" %>
 						</div>
 			</form>
 	<div class="signin">
-		<input type="submit" value="登陆" onclick="location='backindex.html'">
+		<input type="submit" value="登陆" onclick="location='backindex.jsp'">
 	</div>
 </div>
 </body>
