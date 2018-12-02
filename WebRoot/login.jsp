@@ -1,49 +1,163 @@
-<%@page language = "java" contentType = "text/html; charset = UTF-8"
-pageEncoding = "UTF-8" %>
-<html>	
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page import="entry.User"%>
+<%
+        String path = request.getContextPath();
+        String basePath = request.getScheme() + "://"
+                        + request.getServerName() + ":"
+                        + request.getServerPort() + path + "/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
 <head>
-<title>管理员后台</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-		<meta name="keywords" content="Flat Dark Web Login Form Responsive Templates, Iphone Widget Template, Smartphone login forms,Login form, Widget Template, Responsive Templates, a Ipad 404 Templates, Flat Responsive Templates" />
-		<link href="css/stylelogin.css" rel='stylesheet' type='text/css' />
-		<!--webfonts-->
-		<link href='#css?family=PT+Sans:400,700,400italic,700italic|Oswald:400,300,700' rel='stylesheet' type='text/css'>
-		<link href='#css?family=Exo+2' rel='stylesheet' type='text/css'>
-		<!--//webfonts-->
-		<script src="http://ajax.useso.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<base href="<%=basePath%>">
+<title>登录</title>
+<title>bootstrap案例</title>
+<!--用百度的静态资源库的cdn安装bootstrap环境-->
+<!-- Bootstrap 核心 CSS 文件 -->
+<link
+	href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css"
+	rel="stylesheet">
+<!--font-awesome 核心我CSS 文件-->
+<link
+	href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css"
+	rel="stylesheet">
+<!-- 在bootstrap.min.js 之前引入 -->
+<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+<!-- Bootstrap 核心 JavaScript 文件 -->
+<script
+	src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<!--jquery.validate-->
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/message.js"></script>
+<style type="text/css">
+body {
+	background: url(img/login.jpg) no-repeat;
+	background-size: cover;
+	font-size: 16px;
+}
+.form {
+	background: rgba(255, 255, 255, 0.2);
+	width: 400px;
+	margin: 100px auto;
+}
+#login_form {
+	display: block;
+}
+#register_form {
+	display: none;
+}
+.fa {
+	display: inline-block;
+	top: 27px;
+	left: 6px;
+	position: relative;
+	color: #ccc;
+}
+input[type="text"],input[type="password"] {
+	padding-left: 26px;
+}
+.checkbox {
+	padding-left: 21px;
+}
+</style>
 </head>
 <body>
-<script>$(document).ready(function(c) {
-	$('.close').on('click', function(c){
-		$('.login-form').fadeOut('slow', function(c){
-	  		$('.login-form').remove();
-		});
-	});	  
-});
-</script>
- <!--SIGN UP-->
- <h1>管理员登录</h1>
-<div class="login-form">
-	<div class="close"> </div>
-		<div class="head-info">
-			<label class="lbl-1"> </label>
-			<label class="lbl-2"> </label>
-			<label class="lbl-3"> </label>
+
+	<!-- 导航栏  -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+				aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.jsp">我的电子书店</a>
 		</div>
-			<div class="clear"> </div>
-	<div class="avtar">
-		<img src="images/avtar.png" /> 
+		<div id="navbar" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="start.jsp">主页</a></li>
+				<li><a href="login.jsp"> <%
+         User user = (User) session.getAttribute("user");
+         if (user != null)
+                 response.sendRedirect("user.jsp");
+         else
+                 out.print("登录/注册");
+ %> </a></li>
+				<li><a href="about.jsp">关于</a></li>
+			</ul>
+		</div>
+		<!--/.nav-collapse -->
 	</div>
-			<form>
-						<input type="text" class="text" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" >
-						<div class="key">
-								<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
-						</div>
+	</nav>
+
+	<div class="container">
+		<div class="form row">
+			<form action="user_login" class="form-horizontal col-sm-offset-3 col-md-offset-3"
+				id="login_form">
+				<h3 class="form-title">Login to your account</h3>
+				<div class="col-sm-9 col-md-9">
+					<div class="form-group">
+						<i class="fa fa-user fa-lg"></i> <input
+							class="form-control required" type="text" placeholder="Username"
+							name="user.username" autofocus="autofocus" maxlength="20" />
+					</div>
+					<div class="form-group">
+						<i class="fa fa-lock fa-lg"></i> <input
+							class="form-control required" type="password"
+							placeholder="Password" name="user.password" maxlength="8" />
+					</div>
+					<div class="form-group">
+						<label class="checkbox"> <input type="checkbox"
+							name="remember" value="1" /> Remember me </label>
+						<hr />
+						<a href="javascript:;" id="register_btn" class="">Create an
+							account</a>
+					</div>
+					<div class="form-group">
+						<input type="submit" class="btn btn-success pull-right"
+							value="Login " />
+					</div>
+				</div>
 			</form>
-	<div class="signin">
-		<input type="submit" value="登录" onclick="location='backindex.jsp'">
+		</div>
+
+		<div class="form row">
+			<form class="form-horizontal col-sm-offset-3 col-md-offset-3"
+				id="register_form" action ="user_register">
+				<h3 class="form-title">Login to your account</h3>
+				<div class="col-sm-9 col-md-9">
+					<div class="form-group">
+						<i class="fa fa-user fa-lg"></i> <input
+							class="form-control required" type="text" placeholder="Username"
+							name="user.username" autofocus="autofocus" />
+					</div>
+					<div class="form-group">
+						<i class="fa fa-lock fa-lg"></i> <input
+							class="form-control required" type="password"
+							placeholder="Password" id="register_password" name="user.password" />
+					</div>
+					<div class="form-group">
+						<i class="fa fa-check fa-lg"></i> <input
+							class="form-control required" type="password"
+							placeholder="Re-type Your Password" name="rpassword" />
+					</div>
+					<div class="form-group">
+						<i class="fa fa-envelope fa-lg"></i> <input
+							class="form-control eamil" type="text" placeholder="Email"
+							name="user.email" />
+					</div>
+					<div class="form-group">
+						<input type="submit" class="btn btn-success pull-right"
+							value="Sign Up " /> <input type="submit"
+							class="btn btn-info pull-left" id="back_btn" value="Back" />
+					</div>
+				</div>
+			</form>
+		</div>
 	</div>
-</div>
+	<script type="text/javascript" src="js/login.js"></script>
 </body>
-</html>
