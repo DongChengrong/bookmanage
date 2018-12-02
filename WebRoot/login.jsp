@@ -23,7 +23,7 @@ pageEncoding = "UTF-8" %>
 });
 </script>
  <!--SIGN UP-->
- <h1>管理员登陆</h1>
+ <h1>管理员登录</h1>
 <div class="login-form">
 	<div class="close"> </div>
 		<div class="head-info">
@@ -42,7 +42,7 @@ pageEncoding = "UTF-8" %>
 						</div>
 			</form>
 	<div class="signin">
-		<input type="submit" value="登陆" onclick="location='backindex.jsp'">
+		<input type="submit" value="登录" onclick="location='backindex.jsp'">
 	</div>
 </div>
 </body>

@@ -77,7 +77,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 									<a href="login.jsp">Login</a>
 								</li>
 								<li>
-									<a href="signup.jsp">SignUp</a>
+									<a href="register.jsp">Register</a>
 								</li>
 							</ul>
 							<!-- //nav-second-level -->
