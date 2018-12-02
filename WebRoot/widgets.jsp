@@ -49,32 +49,32 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
 					<ul class="nav" id="side-menu">
 						<li>
-							<a href="backindex.jsp"><i class="fa fa-home nav_icon"></i>管理后台</a>
+							<a href="backindex.html"><i class="fa fa-home nav_icon"></i>管理后台</a>
 						</li>
 						<li>
-							<a href="widgets.jsp" class="active"><i class="fa fa-th-large nav_icon"></i>管理员状态 </a>
+							<a href="widgets.html" class="active"><i class="fa fa-th-large nav_icon"></i>管理员状态 </a>
 						</li>
 						<li>
-							<a href="tables.jsp"><i class="fa fa-table nav_icon"></i>图书管理 </a>
+							<a href="tables.html"><i class="fa fa-table nav_icon"></i>图书管理 </a>
 						</li>
 						<li>
-							<a href="grids.jsp"><i class="fa fa-check-square-o nav_icon"></i>图书添加</a>
+							<a href="grids.html"><i class="fa fa-check-square-o nav_icon"></i>图书添加</a>
 							<!-- //nav-second-level -->
 						</li>
 						<li>
 							<a href="#"><i class="fa fa-file-text-o nav_icon"></i>Pages<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level collapse">
 								<li>
-									<a href="login.jsp">Login</a>
+									<a href="login.html">Login</a>
 								</li>
 								<li>
-									<a href="signup.jsp">SignUp</a>
+									<a href="signup.html">SignUp</a>
 								</li>
 							</ul>
 							<!-- //nav-second-level -->
 						</li>
 						<li>
-							<a href="charts.jsp" class="chart-nav"><i class="fa fa-bar-chart nav_icon"></i>Charts </a>
+							<a href="charts.html" class="chart-nav"><i class="fa fa-bar-chart nav_icon"></i>Charts </a>
 						</li>
 					</ul>
 					<div class="clearfix"> </div>
@@ -91,7 +91,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				<!--toggle button end-->
 				<!--logo -->
 				<div class="logo">
-					<a href="backindex.jsp">
+					<a href="backindex.html">
 						<h1>用户名</h1>
 						<span>管理员</span>
 					</a>
@@ -186,7 +186,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 							<ul class="dropdown-menu drp-mnu">
 								<li> <a href="#"><i class="fa fa-cog"></i> 设置</a> </li> 
 								<li> <a href="#"><i class="fa fa-user"></i> 。。。</a> </li> 
-								<li> <a href="login.jsp"><i class="fa fa-sign-out"></i> 登出</a> </li>
+								<li> <a href="login.html"><i class="fa fa-sign-out"></i> 登出</a> </li>
 							</ul>
 						</li>
 					</ul>
